@@ -10,4 +10,4 @@ app.get('/*', (req, res => {
     res.sendFile(path.join(__dirname, '/dist/site-proj/index.html'));
 }));
 
-console.log('server is running')
+console.log('server is running');
