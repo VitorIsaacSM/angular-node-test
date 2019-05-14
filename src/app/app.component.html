@@ -1,0 +1,57 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main">
+  <h1>{{title}}</h1>
+  <div class="main-section">
+    
+    <ul *ngIf="data.length > 0; else errormsg" class="lista">
+        <li *ngFor="let object of data" class="item">
+          <h2>{{object.nome}}</h2>
+          <h2>{{object.idade}}</h2>
+          <h2>{{object.emprego}}</h2>
+          <h2>{{object.formacao}}</h2>
+        </li>
+    </ul>
+
+    <h2 *ngIf="data.length <= 0" >Nenhum dado encontrado no servidor</h2>
+    </div>
+  <div class="main-section">
+  <form class="product-form" action="https://node-pessoa-api.herokuapp.com/postData" method="POST">
+    <h2>Adicionar novo usuario</h2>
+    <div class="inputs">
+
+      <label for="nome">Nome</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="nome" aria-describedby="basic-addon3" name="nome">
+      </div>
+
+      <label for="idade">Idade</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="idade" aria-describedby="basic-addon3" name="idade">
+      </div>
+
+      <label for="emprego">Emprego</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="emprego" aria-describedby="basic-addon3" name="emprego">
+      </div>
+
+      <label for="formacao">Formação</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="formacao" aria-describedby="basic-addon3" name="formacao">
+      </div>
+
+    <button class="btn btn-primary" type="submit" (click)="evento()">Adicionar Pessoa</button>
+    
+    </div>
+  
+  </form>
+  </div>
+
+<div class="main-section">
+    <form class="product-form" action="https://node-pessoa-api.herokuapp.com/resetData" method="POST">
+      <h2>Zerar a Lista</h2>
+      <div class="inputs main-section2">
+        <button class="btn btn-primary btn-block" type="submit" (click)="evento()">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
