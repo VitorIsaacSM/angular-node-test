@@ -14,30 +14,24 @@
 
     <h2 *ngIf="data.length <= 0" >Nenhum dado encontrado no servidor</h2>
     </div>
-  <div class="main-section">
+  <div class="main-section2">
   <form class="product-form" (ngSubmit)="addUser()">
     <h2>Adicionar novo usuario</h2>
-    <div class="inputs">
+    <div class="inputs2">
 
-      <label for="nome">Nome</label>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="nome" aria-describedby="basic-addon3" name="nome" [(ngModel)]="objNome">
-      </div>
-
+      <label for="nome" class="descText">Nome</label>
+      <input type="text" class="form-control" id="nome" aria-describedby="basic-addon3" name="nome" [(ngModel)]="objNome">
+      
       <label for="idade">Idade</label>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="idade" aria-describedby="basic-addon3" name="idade" [(ngModel)]="objIdade">
-      </div>
-
+      <input type="text" class="form-control" id="idade" aria-describedby="basic-addon3" name="idade" [(ngModel)]="objIdade">
+      
       <label for="emprego">Emprego</label>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="emprego" aria-describedby="basic-addon3" name="emprego" [(ngModel)]="objEmprego">
-      </div>
-
+      <input type="text" class="form-control" id="emprego" aria-describedby="basic-addon3" name="emprego" [(ngModel)]="objEmprego">
+ 
       <label for="formacao">Formação</label>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="formacao" aria-describedby="basic-addon3" name="formacao" [(ngModel)]="objFormacao">
-      </div>
+      <input type="text" class="form-control" id="formacao" aria-describedby="basic-addon3" name="formacao" [(ngModel)]="objFormacao">
+     
+
       <button class="btn btn-primary" type="submit" (click)="evento()">adicionar pessoa</button>
     </div>
   </form>
