@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
   evento(){
     setTimeout(()=>{
-      window.location.href = 'http://localhost:4200';
+      window.location.href = 'https://angular-pessoa-app.herokuapp.com/';
     }, 1500);
   }
 
