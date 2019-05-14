@@ -8,8 +8,13 @@ import { ObjetoJson } from './objetoJson';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Projeto Angular + Node';
+  title = 'siteProj';
   data : ObjetoJson[] = [];
+
+  objNome : string;
+  objIdade: string;
+  objEmprego: string;
+  objFormacao: string;
 
   constructor(private service: GetDataService){
 
@@ -26,8 +31,24 @@ export class AppComponent implements OnInit {
 
   evento(){
     setTimeout(()=>{
-      window.location.reload();
+      window.location.href = 'http://localhost:4200';
     }, 1500);
+  }
+
+  addUser(){
+    let objeto: ObjetoJson = {
+      nome: this.objNome,
+      idade: this.objIdade,
+      emprego: this.objEmprego,
+      formacao: this.objFormacao
+    };
+
+    console.log(objeto);
+    this.service.addUserOnServer(objeto).subscribe();
+  }
+
+  resetData(){
+    this.service.resetDataFromServer().subscribe(()=>{console.log('dados resetados')});
   }
 
   getData(){

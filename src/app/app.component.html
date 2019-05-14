@@ -15,43 +15,40 @@
     <h2 *ngIf="data.length <= 0" >Nenhum dado encontrado no servidor</h2>
     </div>
   <div class="main-section">
-  <form class="product-form" action="https://node-pessoa-api.herokuapp.com/postData" method="POST">
+  <form class="product-form" (ngSubmit)="addUser()">
     <h2>Adicionar novo usuario</h2>
     <div class="inputs">
 
       <label for="nome">Nome</label>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" id="nome" aria-describedby="basic-addon3" name="nome">
+        <input type="text" class="form-control" id="nome" aria-describedby="basic-addon3" name="nome" [(ngModel)]="objNome">
       </div>
 
       <label for="idade">Idade</label>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" id="idade" aria-describedby="basic-addon3" name="idade">
+        <input type="text" class="form-control" id="idade" aria-describedby="basic-addon3" name="idade" [(ngModel)]="objIdade">
       </div>
 
       <label for="emprego">Emprego</label>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" id="emprego" aria-describedby="basic-addon3" name="emprego">
+        <input type="text" class="form-control" id="emprego" aria-describedby="basic-addon3" name="emprego" [(ngModel)]="objEmprego">
       </div>
 
       <label for="formacao">Formação</label>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" id="formacao" aria-describedby="basic-addon3" name="formacao">
+        <input type="text" class="form-control" id="formacao" aria-describedby="basic-addon3" name="formacao" [(ngModel)]="objFormacao">
       </div>
-
-    <button class="btn btn-primary" type="submit" (click)="evento()">Adicionar Pessoa</button>
-    
+      <button class="btn btn-primary" type="submit" (click)="evento()">adicionar pessoa</button>
     </div>
-  
   </form>
   </div>
 
-<div class="main-section">
-    <form class="product-form" action="https://node-pessoa-api.herokuapp.com/resetData" method="POST">
-      <h2>Zerar a Lista</h2>
-      <div class="inputs main-section2">
+  <div class="main-section">
+    <form class="product-form" (ngSubmit)="resetData()">
+      <h2>Resetar a Lista</h2>
+      <div class="inputs">
         <button class="btn btn-primary btn-block" type="submit" (click)="evento()">Reset</button>
       </div>
     </form>
-  </div>
+    </div>
 </div>
