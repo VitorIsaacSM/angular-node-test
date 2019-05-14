@@ -3,7 +3,7 @@
   <h1>{{title}}</h1>
   <div class="main-section">
     
-    <ul *ngIf="data.length > 0; else errormsg" class="lista">
+    <ul *ngIf="data.length > 0" class="lista">
         <li *ngFor="let object of data" class="item">
           <h2>{{object.nome}}</h2>
           <h2>{{object.idade}}</h2>
