@@ -5,4 +5,4 @@ Meu primeiro projeto utilizando angular, um aplicativo bem simples com um Formul
 Foi um projeto bem pequeno, mas importante pois aprendi a integrar Front e Back utilizando Angular e NodeJS
 
 acesse a aplicação:
-https://angular-pessoa-app.herokuapp.com/
+https://angular-node-test-app.herokuapp.com/
